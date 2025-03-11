@@ -3,8 +3,8 @@ import { gsap } from "gsap";
 document.addEventListener("DOMContentLoaded", () => {
   gsap.fromTo(
     ".overlay-container",
-    { rotationY: -45 },
-    { rotationY: 0, duration: 2.5, ease: "power2.inOut" }
+    { rotationY: -70 },
+    { rotationY: 0, duration: 3, ease: "power1.out" }
   );
 
   gsap.fromTo(

@@ -151,6 +151,8 @@ h6 {
   text-align: center;
   z-index: 50;
   font-family: "Lato", sans-serif;
+  perspective: 1000px;
+  perspective-origin: center;
 }
 .overlay-container:hover {
   background: rgba(62, 127, 81, 0.322);

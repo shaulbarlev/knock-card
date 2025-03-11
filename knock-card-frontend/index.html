@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tomi Lev's Card</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div class="card">
+        <div class="overlay">
+          <div class="profile-pic"></div>
+          <h1>Tomi Lev</h1>
+          <h2>Executive Sales</h2>
+          <ul>
+            <li><a href="#">Chat on WhatsApp</a></li>
+            <li><a href="#">Chat on LinkedIn</a></li>
+            <li><a href="#">Chat on Facebook</a></li>
+            <li><a href="#">Chat on Twitter</a></li>
+          </ul>
+        </div>
+        <video id="card-video" autoplay>
+          <source src="Black_Matte-v5.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+      document
+        .getElementById("card-video")
+        .addEventListener("ended", function () {
+          this.pause();
+          this.currentTime = this.duration;
+        });
+    </script>
+  </body>
+</html>

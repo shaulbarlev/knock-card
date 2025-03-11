@@ -149,9 +149,11 @@ h6 {
   align-items: center;
   color: white;
   text-align: center;
-  background: rgba(62, 127, 81, 0.322);
   z-index: 50;
   font-family: "Lato", sans-serif;
+}
+.overlay-container:hover {
+  background: rgba(62, 127, 81, 0.322);
 }
 
 .overlay-top,
@@ -165,7 +167,7 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1em;
+  margin-top: 2.5em;
 }
 
 .overlay-bottom {
@@ -177,13 +179,18 @@ h6 {
 }
 
 .overlay-top h1 {
-  margin-bottom: 0.5em;
-  font-size: 2em;
+  font-size: 1.6em;
 }
 
 .overlay-top h2 {
-  margin-bottom: 1em;
-  font-size: 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 0.6em;
+}
+
+.overlay-top h3 {
+  font-size: 0.8em;
+  font-weight: 500;
 }
 
 .overlay-bottom ul {

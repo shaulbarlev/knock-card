@@ -76,13 +76,14 @@ h6 {
 }
 
 .card {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 428px;
   height: 926px;
-  overflow: hidden;
   perspective: 1500px;
-  perspective-origin: center;
-  margin: auto; /* Center the card */
+  overflow: hidden;
 }
 
 #card-video {

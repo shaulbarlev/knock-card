@@ -69,10 +69,11 @@ h6 {
   isolation: isolate;
 }
 
-.app {
+#app {
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 .card {
@@ -82,8 +83,16 @@ h6 {
   transform: translate(-50%, -50%);
   width: 428px;
   height: 926px;
-  perspective: 1500px;
+  perspective: 150em;
+  perspective-origin: 0 60vh;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .card {
+    perspective: 150em;
+    perspective-origin: 0 80vh;
+  }
 }
 
 #card-video {
@@ -186,6 +195,24 @@ h6 {
   margin-bottom: 6em;
 }
 
+.overlay-socials {
+  position: absolute;
+  display: flex;
+  bottom: 40px;
+  align-items: center;
+  margin-bottom: 2em;
+
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px; /* Space between images */
+}
+
+.overlay-socials img {
+  width: 32px;
+  color: white;
+}
+
 .overlay-top h1 {
   font-size: 1.6em;
 }
@@ -225,6 +252,13 @@ h6 {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: white;
   margin-bottom: 1em;
+  background: url(https://thispersondoesnotexist.com/) no-repeat center center;
+  background-size: cover;
+}
+
+@media (max-width: 390px) {
+  #app {
+    transform: scale(0.94) translateY(-6%);
+  }
 }

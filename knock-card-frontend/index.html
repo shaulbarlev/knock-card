@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tomi Lev's Card</title>
@@ -16,6 +15,11 @@
     <div id="app">
       <div class="card">
         <div class="overlay-container">
+          <ul class="overlay-socials">
+            <li><img src="img/facebook.svg" /></li>
+            <li><img src="img/X.svg" /></li>
+            <li><img src="img/instagram.svg" /></li>
+          </ul>
           <div class="overlay-top">
             <div class="profile-pic"></div>
             <h1>Tomi Lev</h1>
@@ -24,14 +28,14 @@
           </div>
           <div class="overlay-bottom">
             <ul>
-              <li><a href="#">Chat on WhatsApp</a></li>
-              <li><a href="#">Chat on LinkedIn</a></li>
-              <li><a href="#">Chat on Facebook</a></li>
-              <li><a href="#">Chat on Twitter</a></li>
+              <li><a href="#">Chat with LinkedIn</a></li>
+              <li><a href="#">Chat with WhatsApp</a></li>
+              <li><a href="#">Chat with Slack</a></li>
+              <li><a href="#">Book time for a demo</a></li>
             </ul>
           </div>
         </div>
-        <video id="card-video" autoplay>
+        <video id="card-video" autoplay muted playsinline>
           <source src="Black_Matte-v5.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>

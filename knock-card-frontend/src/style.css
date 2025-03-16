@@ -77,15 +77,15 @@ h6 {
 }
 
 .card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 428px;
-  height: 926px;
+  /* position: absolute; */
+  top: 15px;
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  width: 370px;
+  height: 640px;
   perspective: 150em;
   perspective-origin: 0 60vh;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 @media (max-width: 768px) {
@@ -96,10 +96,12 @@ h6 {
 }
 
 #card-video {
-  position: absolute;
+  transform: scale(1.15);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(0%, -10%) scale(1.15);
+  /* width: 500px;
+  height: 926px;*/
 }
 
 .overlay {
@@ -238,9 +240,9 @@ h6 {
   background: rgb(45, 44, 45);
   background: linear-gradient(
     90deg,
-    rgba(45, 44, 45, 1) 0%,
-    rgba(45, 44, 45, 1) 43%,
-    rgba(59, 59, 59, 1) 100%
+    rgb(35, 35, 36) 0%,
+    rgb(44, 43, 44) 43%,
+    rgb(56, 56, 57) 100%
   );
 
   width: 100%;
@@ -248,7 +250,8 @@ h6 {
   border-radius: 20px;
   margin: 0.95em 0;
   font-size: 0.8em;
-  box-shadow: 1px -1px 0px 0px rgb(122, 122, 122);
+  box-shadow: 1px -1px 0px 0px rgb(122, 122, 122, 1),
+    -1px 1px 0px 0px rgba(122, 122, 122, 0);
 }
 
 .overlay-bottom ul li a {

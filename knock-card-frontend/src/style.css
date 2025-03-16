@@ -92,9 +92,17 @@ h6 {
   }
 }
 
-#card-video {
+#video-container {
   transform: translateY(-10%) scale(1.15);
 }
+
+#video-container video {
+  z-index: 30;
+}
+/* 
+#video-container img {
+  position: absolute;
+} */
 
 .overlay {
   width: 370px;

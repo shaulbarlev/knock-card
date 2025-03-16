@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { CustomEase } from "gsap/CustomEase";
+// import { CustomEase } from "gsap/CustomEase";
 
 document.addEventListener("DOMContentLoaded", () => {
   // gsap.fromTo(
@@ -15,10 +15,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const tl = gsap.timeline({ paused: true });
 
   const video = document.getElementById("card-video");
+  const timeoutDuration = 3000; //wait time for video load
+  let videoLoaded = false;
 
-  // Sync GSAP timeline with video start
+  // Video loading timeout
+  const handleTimeout = () => {
+    if (!videoLoaded) {
+      console.log("Video failed to load in time. Showing fallback image.");
+      video.style.display = "none";
+      document.getElementById("fallback-image").style.display = "block";
+      tl.seek(5);
+    }
+  };
+
+  // set a timeout
+  const timeout = setTimeout(handleTimeout, timeoutDuration);
+
+  // Event listener for video starting to play
   video.addEventListener("play", () => {
-    video.style.opacity = 1;
+    videoLoaded = true;
+    clearTimeout(timeout);
+    console.log("card-video started playing");
+
+    //playing animation timeline!
     tl.play();
   });
 

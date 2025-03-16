@@ -45,10 +45,17 @@
             </ul>
           </div>
         </div>
-        <video id="card-video" style="opacity: 0" autoplay muted playsinline>
-          <source src="Black_Matte-v5-nobuttons.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <div id="video-container">
+          <img
+            id="fallback-image"
+            src="img/black-matte-fallback.jpg"
+            style="display: none"
+          />
+          <video id="card-video" style="opacity: 0" autoplay muted playsinline>
+            <source src="Black_Matte-v5-nobuttons.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
     <script type="module" src="/src/main.js"></script>

@@ -47,8 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Card Rotation Animation
   tl.fromTo(
     ".overlay-container",
-    { rotationY: -100 },
-    { rotationY: 0, duration: 3, ease: "power1.out" },
+    { rotationY: -100, translateX: "-50%", translateY: "-50%" },
+    {
+      rotationY: 0,
+      translateX: "-50%",
+      translateY: "-50%",
+      duration: 3,
+      ease: "power1.out",
+      overwrite: "true",
+    },
     "-=0.35" // Overlap with video fade-in
   );
 
@@ -96,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "1px -1px 0px 0px rgb(122, 122, 122), -1px 1px 0px 0px rgba(122, 122, 122, 0)",
       duration: 2.5,
     },
-    "-=1.2" // Align with button reveal
+    "-=2" // Align with button reveal
   );
 
   // //Video only scale up

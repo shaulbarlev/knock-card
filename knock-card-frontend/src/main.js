@@ -12,13 +12,25 @@ document.addEventListener("DOMContentLoaded", () => {
   //   }
   // );
 
-  const tl = gsap.timeline();
+  const tl = gsap.timeline({ paused: true });
+
+  const video = document.getElementById("card-video");
+
+  // Sync GSAP timeline with video start
+  video.addEventListener("play", () => {
+    video.style.opacity = 1;
+    tl.play();
+  });
+
+  // Card Rotation Animation
+  tl.fromTo("#card-video", { opacity: 0 }, { opacity: 1, duration: 0.35 });
 
   // Card Rotation Animation
   tl.fromTo(
     ".overlay-container",
     { rotationY: -100 },
-    { rotationY: 0, duration: 3, ease: "power1.out" }
+    { rotationY: 0, duration: 3, ease: "power1.out" },
+    "-=0.35" // Overlap with video fade-in
   );
 
   // Card Vertical Position Animation

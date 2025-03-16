@@ -12,36 +12,41 @@ document.addEventListener("DOMContentLoaded", () => {
   //   }
   // );
 
+  const tl = gsap.timeline();
+
   // Card Rotation Animation
-  gsap.fromTo(
+  tl.fromTo(
     ".overlay-container",
     { rotationY: -100 },
     { rotationY: 0, duration: 3, ease: "power1.out" }
   );
 
   // Card Vertical Position Animation
-  gsap.fromTo(
+  tl.fromTo(
     ".card",
     { y: 260, scale: 0.7 },
-    { y: 0, scale: 1, duration: 2.5, ease: "power2.out" }
+    { y: 0, scale: 1, duration: 2.5, ease: "power2.out" },
+    "-=3" // Overlap with rotation animation
   );
 
-  //Entire overlay fade in
-  gsap.fromTo(
+  // Entire overlay fade in
+  tl.fromTo(
     ".overlay-container",
     { opacity: 0 },
-    { opacity: 1, duration: 2.5, ease: "power2.inOut", delay: 0.35 }
+    { opacity: 1, duration: 2.5, ease: "power2.inOut" },
+    "-=2.5" // Adjust delay to match previous animations
   );
 
-  // Staggered Buttons reveal
-  gsap.fromTo(
+  // Staggered Buttons Reveal
+  tl.fromTo(
     ".card-btn",
     { opacity: 0 },
-    { opacity: 1, duration: 2.5, delay: 0.5, stagger: 0.35 }
+    { opacity: 1, duration: 2.5, stagger: 0.35 },
+    "-=2.5" // Sync with overlay fade-in
   );
 
-  //Button lighting effect
-  gsap.fromTo(
+  // Button Lighting Effect
+  tl.fromTo(
     ".card-btn",
     {
       boxShadow:
@@ -51,8 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
       boxShadow:
         "1px -1px 0px 0px rgb(122, 122, 122), -1px 1px 0px 0px rgba(122, 122, 122, 0)",
       duration: 2.5,
-      delay: 1.2,
-    }
+    },
+    "-=1.2" // Align with button reveal
   );
 
   // //Video only scale up

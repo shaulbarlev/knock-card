@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // //Video only scale up
   // gsap.fromTo(
   //   "#card-video",
-  //   { scale: 1 },
-  //   { scale: 1.3, duration: 2.5, ease: "power2.out" }
+  //   { scale: 1, translate: 0 },
+  //   { scale: 1.25, duration: 2.5, ease: "power2.out" }
   // );
 });

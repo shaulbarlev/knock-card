@@ -77,15 +77,12 @@ h6 {
 }
 
 .card {
-  /* position: absolute; */
-  top: 15px;
-  /* left: 50%; */
-  /* transform: translate(-50%, -50%); */
   width: 370px;
   height: 640px;
   perspective: 150em;
   perspective-origin: 0 60vh;
-  /* overflow: hidden; */
+  margin: 0 auto;
+  margin-top: 2vw;
 }
 
 @media (max-width: 768px) {
@@ -96,12 +93,7 @@ h6 {
 }
 
 #card-video {
-  transform: scale(1.15);
-  top: 50%;
-  left: 50%;
-  transform: translate(0%, -10%) scale(1.15);
-  /* width: 500px;
-  height: 926px;*/
+  transform: translateY(-10%) scale(1.15);
 }
 
 .overlay {

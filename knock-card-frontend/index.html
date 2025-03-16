@@ -10,15 +10,25 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <div id="app">
       <div class="card">
         <div class="overlay-container">
           <ul class="overlay-socials">
-            <li><img src="img/facebook.svg" /></li>
-            <li><img src="img/X.svg" /></li>
-            <li><img src="img/instagram.svg" /></li>
+            <li>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </li>
           </ul>
           <div class="overlay-top">
             <div class="profile-pic"></div>
@@ -42,13 +52,5 @@
       </div>
     </div>
     <script type="module" src="/src/main.js"></script>
-    <script>
-      document
-        .getElementById("card-video")
-        .addEventListener("ended", function () {
-          this.pause();
-          this.currentTime = this.duration;
-        });
-    </script>
   </body>
 </html>

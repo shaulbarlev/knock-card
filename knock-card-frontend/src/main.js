@@ -61,4 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
   //   { scale: 1, translate: 0 },
   //   { scale: 1.25, duration: 2.5, ease: "power2.out" }
   // );
+
+  document.getElementById("card-video").addEventListener("ended", function () {
+    this.pause();
+    this.currentTime = this.duration;
+  });
 });

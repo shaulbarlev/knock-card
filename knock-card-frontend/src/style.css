@@ -282,9 +282,9 @@ h6 {
   background: url(https://thispersondoesnotexist.com/) no-repeat center center;
   background-size: cover;
 }
-/* 
-@media (max-width: 390px) {
+
+@media (max-width: 375px) {
   #app {
-    transform: scale(0.94) translateY(-6%);
+    transform: scale(0.94) translateY(-3%);
   }
-} */
+}

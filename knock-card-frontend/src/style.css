@@ -199,15 +199,24 @@ h6 {
 
 .overlay-socials {
   position: absolute;
+  bottom: 15px;
+}
+
+.overlay-socials ul {
   display: flex;
-  bottom: 40px;
   align-items: center;
-  margin-bottom: 2em;
 
   list-style-type: none;
   padding: 0;
   margin: 0;
   gap: 10px; /* Space between images */
+}
+
+.overlay-socials h3 {
+  color: rgba(255, 255, 255, 0.185);
+  font-size: 14px;
+  margin-top: 1em;
+  font-weight: 100;
 }
 
 .overlay-socials i {

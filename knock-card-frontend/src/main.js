@@ -76,6 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
     "-=2.5" // Sync with overlay fade-in
   );
 
+  // Staggered socials reveal
+  tl.fromTo(
+    ".overlay-socials ul li",
+    { opacity: 0 },
+    { opacity: 1, duration: 2, stagger: 0.05 },
+    "-=2.2" // Sync with overlay fade-in
+  );
+
   // Button Lighting Effect
   tl.fromTo(
     ".card-btn",

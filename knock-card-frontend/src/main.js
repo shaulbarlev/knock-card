@@ -14,6 +14,12 @@ const configs = {
     scale: 0.85,
     fadeInTime: 0.6,
   },
+  b2: {
+    startTime: 0,
+    top: 100,
+    scale: 0.85,
+    fadeInTime: 0.8,
+  },
   c: {
     startTime: 0,
     top: 150,
@@ -26,7 +32,14 @@ const configs = {
 let hash = window.location.hash.substring(1); // Removes the #
 if (hash == "") hash = "a"; //default value
 
+window.addEventListener("hashchange", function () {
+  console.log("Hash changed to: " + window.location.hash);
+  location.reload();
+});
+
 document.addEventListener("DOMContentLoaded", () => {
+  // addEventListener("focus", (event) => reveal());
+
   // gsap.fromTo(
   //   ".overlay-container",
   //   { rotationY: -75 },
@@ -41,40 +54,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const tlFadein = gsap.timeline({ paused: true });
 
   const video = document.getElementById("card-video");
+
   const timeoutDuration = 3000; //wait time for video load
-  let videoLoaded = false;
+  let firstplayoccured = false;
 
   // Video loading timeout
   const handleTimeout = () => {
-    if (!videoLoaded) {
+    if (!firstplayoccured) {
       console.log("Video failed to load in time. Showing fallback image.");
       video.style.display = "none";
       document.getElementById("fallback-image").style.display = "block";
       tl.seek(5);
+      tlFadein.play(0);
     }
   };
+
+  // Event listener for video starting to play
+  video.addEventListener("play", () => {
+    if (!firstplayoccured) {
+      reveal();
+      firstplayoccured = true;
+    }
+  });
 
   // set a timeout
   const timeout = setTimeout(handleTimeout, timeoutDuration);
 
-  // Event listener for video starting to play
-  video.addEventListener("play", () => {
-    videoLoaded = true;
-    clearTimeout(timeout);
-    console.log("card-video started playing");
-
-    // Seek and play video from startTime
+  function reveal() {
+    tl.seek(configs[hash].startTime);
     video.currentTime = configs[hash].startTime;
     video.play();
 
+    clearTimeout(timeout);
+    console.log("card-video started playing");
+
     //playing animation timeline!
-    tl.seek(configs[hash].startTime);
-    tl.play();
+    tl.play(configs[hash].startTime);
     setTimeout(() => {
-      console.log("Waited 20ms");
-      tlFadein.play();
-    }, 50);
-  });
+      console.log("Waited");
+      tlFadein.play(0);
+    }, 200);
+  }
 
   // Card Rotation Animation
   tlFadein.fromTo(

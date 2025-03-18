@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // );
 
   const tl = gsap.timeline({ paused: true });
+  const tlFadein = gsap.timeline({ paused: true });
 
   const video = document.getElementById("card-video");
   const timeoutDuration = 3000; //wait time for video load
@@ -33,16 +34,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Event listener for video starting to play
   video.addEventListener("play", () => {
+    tlFadein.play();
+    const startTime = 0.8;
     videoLoaded = true;
     clearTimeout(timeout);
     console.log("card-video started playing");
 
+    // Seek and play video from 2 seconds
+    video.currentTime = startTime;
+    // video.play();
+
     //playing animation timeline!
+    tl.seek(startTime);
     tl.play();
   });
 
   // Card Rotation Animation
-  tl.fromTo("#card-video", { opacity: 0 }, { opacity: 1, duration: 0.35 });
+  tlFadein.fromTo("#app", { opacity: 0 }, { opacity: 1, duration: 0.35 });
 
   // Card Rotation Animation
   tl.fromTo(
@@ -63,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   tl.fromTo(
     ".card",
     { y: 260, scale: 0.7 },
+    // { y: 80, scale: 0.85 },
     { y: 0, scale: 1, duration: 2.5, ease: "power2.out" },
     "-=3" // Overlap with rotation animation
   );

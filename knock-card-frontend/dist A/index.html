@@ -5,7 +5,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tomi Lev's Card</title>
-    <link rel="stylesheet" href="src/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
       rel="stylesheet"
@@ -14,9 +13,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <script type="module" crossorigin src="/knock-card/assets/index-BbiZnncd.js"></script>
+    <link rel="stylesheet" crossorigin href="/knock-card/assets/index-iTIQAlHz.css">
   </head>
   <body>
-    <div id="app" style="opacity: 0">
+    <div id="app">
       <div class="card">
         <div class="overlay-container">
           <div class="overlay-top">
@@ -51,16 +52,15 @@
         <div id="video-container">
           <img
             id="fallback-image"
-            src="img/black-matte-fallback.jpg"
+            src="/knock-card/assets/black-matte-fallback-BUOFyqog.jpg"
             style="display: none"
           />
-          <video id="card-video" autoplay muted playsinline>
-            <source src="img/Black_Matte-v5-nobuttons.mp4" type="video/mp4" />
+          <video id="card-video" style="opacity: 0" autoplay muted playsinline>
+            <source src="/knock-card/assets/Black_Matte-v5-nobuttons-B1cAL3kw.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
       </div>
     </div>
-    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

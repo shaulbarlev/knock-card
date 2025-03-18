@@ -1,6 +1,10 @@
 import { gsap } from "gsap";
 // import { CustomEase } from "gsap/CustomEase";
 
+//read hash from url
+const hash = window.location.hash.substring(1); // Removes the #
+console.log(hash);
+
 document.addEventListener("DOMContentLoaded", () => {
   // gsap.fromTo(
   //   ".overlay-container",
@@ -34,19 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Event listener for video starting to play
   video.addEventListener("play", () => {
-    tlFadein.play();
-    const startTime = 0;
+    let startTime = hash;
+
     videoLoaded = true;
     clearTimeout(timeout);
     console.log("card-video started playing");
 
-    // Seek and play video from 2 seconds
+    // Seek and play video from startTime
     video.currentTime = startTime;
-    // video.play();
+    video.play();
 
     //playing animation timeline!
     tl.seek(startTime);
     tl.play();
+    setTimeout(() => {
+      console.log("Waited 20ms");
+      tlFadein.play();
+    }, 50);
   });
 
   // Card Rotation Animation

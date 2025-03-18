@@ -1,9 +1,30 @@
 import { gsap } from "gsap";
 // import { CustomEase } from "gsap/CustomEase";
 
+const configs = {
+  a: {
+    startTime: 0,
+    top: 280,
+    scale: 0.7,
+    fadeInTime: 0.35,
+  },
+  b: {
+    startTime: 0.8,
+    top: 200,
+    scale: 0.85,
+    fadeInTime: 0.6,
+  },
+  c: {
+    startTime: 0,
+    top: 150,
+    scale: 0.9,
+    fadeInTime: 0.35,
+  },
+};
+
 //read hash from url
-const hash = window.location.hash.substring(1); // Removes the #
-console.log(hash);
+let hash = window.location.hash.substring(1); // Removes the #
+if (hash == "") hash = "a"; //default value
 
 document.addEventListener("DOMContentLoaded", () => {
   // gsap.fromTo(
@@ -38,18 +59,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Event listener for video starting to play
   video.addEventListener("play", () => {
-    let startTime = hash;
-
     videoLoaded = true;
     clearTimeout(timeout);
     console.log("card-video started playing");
 
     // Seek and play video from startTime
-    video.currentTime = startTime;
+    video.currentTime = configs[hash].startTime;
     video.play();
 
     //playing animation timeline!
-    tl.seek(startTime);
+    tl.seek(configs[hash].startTime);
     tl.play();
     setTimeout(() => {
       console.log("Waited 20ms");
@@ -58,7 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Card Rotation Animation
-  tlFadein.fromTo("#app", { opacity: 0 }, { opacity: 1, duration: 0.35 });
+  tlFadein.fromTo(
+    "#app",
+    { opacity: 0 },
+    { opacity: 1, duration: configs[hash].fadeInTime }
+  );
 
   // Card Rotation Animation
   tl.fromTo(
@@ -78,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Card Vertical Position Animation
   tl.fromTo(
     ".card",
-    { y: 260, scale: 0.7 },
+    { y: configs[hash].top, scale: configs[hash].scale },
     // { y: 80, scale: 0.85 },
     { y: 0, scale: 1, duration: 2.5, ease: "power2.out" },
     "-=3" // Overlap with rotation animation

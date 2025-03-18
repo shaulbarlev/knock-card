@@ -4,5 +4,5 @@ export default defineConfig({
   server: {
     host: true,
   },
-  base: "/knock-card-b/",
+  base: "/knock-card/",
 });

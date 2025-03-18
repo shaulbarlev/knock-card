@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Event listener for video starting to play
   video.addEventListener("play", () => {
     tlFadein.play();
-    const startTime = 0.8;
+    const startTime = 0;
     videoLoaded = true;
     clearTimeout(timeout);
     console.log("card-video started playing");

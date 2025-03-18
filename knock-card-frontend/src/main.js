@@ -91,20 +91,20 @@ document.addEventListener("DOMContentLoaded", () => {
     "-=2.2" // Sync with overlay fade-in
   );
 
-  // Button Lighting Effect
-  tl.fromTo(
-    ".card-btn",
-    {
-      boxShadow:
-        "1px -1px 0px 0px rgba(122, 122, 122, 0), -1px 1px 0px 0px rgb(122, 122, 122)",
-    },
-    {
-      boxShadow:
-        "1px -1px 0px 0px rgb(122, 122, 122), -1px 1px 0px 0px rgba(122, 122, 122, 0)",
-      duration: 2.5,
-    },
-    "-=2" // Align with button reveal
-  );
+  // // Button Lighting Effect
+  // tl.fromTo(
+  //   ".card-btn",
+  //   {
+  //     boxShadow:
+  //       "1px -1px 0px 0px rgba(122, 122, 122, 0), -1px 1px 0px 0px rgb(122, 122, 122)",
+  //   },
+  //   {
+  //     boxShadow:
+  //       "1px -1px 0px 0px rgb(122, 122, 122), -1px 1px 0px 0px rgba(122, 122, 122, 0)",
+  //     duration: 2.5,
+  //   },
+  //   "-=2" // Align with button reveal
+  // );
 
   // //Video only scale up
   // gsap.fromTo(

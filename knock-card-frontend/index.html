@@ -1,66 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tomi Lev's Card</title>
-    <link rel="stylesheet" href="src/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <title>Vite + React + TS</title>
   </head>
   <body>
-    <div id="app" style="opacity: 0">
-      <div class="card">
-        <div class="overlay-container">
-          <div class="overlay-top">
-            <div class="profile-pic"></div>
-            <h1>Tomi Lev</h1>
-            <h2>Sales Executive | Monday.com</h2>
-            <h3>Helping teams work better, faster, smarter 🚀</h3>
-          </div>
-          <div class="overlay-bottom">
-            <ul>
-              <li class="card-btn"><a href="#">Chat on LinkedIn</a></li>
-              <li class="card-btn"><a href="#">Chat on WhatsApp</a></li>
-              <li class="card-btn"><a href="#">Chat on Slack</a></li>
-              <li class="card-btn"><a href="#">Book a meeting</a></li>
-            </ul>
-          </div>
-          <div class="overlay-socials">
-            <ul>
-              <li>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </li>
-            </ul>
-            <h3>Powered by Knock</h3>
-          </div>
-        </div>
-        <div id="video-container">
-          <img
-            id="fallback-image"
-            src="img/black-matte-fallback.jpg"
-            style="display: none"
-          />
-          <video id="card-video" autoplay muted playsinline>
-            <source src="img/Black_Matte-v5-nobuttons.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </div>
-    <script type="module" src="/src/main.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

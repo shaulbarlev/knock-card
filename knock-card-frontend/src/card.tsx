@@ -4,6 +4,8 @@ import "./App.css";
 import bgvideo from "./assets/black-matte-fallback.jpg"; // Importing an image
 import bgfallback from "./assets/Black_Matte-v5-nobuttons.mp4"; // Importing an image
 
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"; // Import social media icons
+
 function Card() {
   return (
     <div className="card">
@@ -34,17 +36,17 @@ function Card() {
           <ul>
             <li>
               <a href="#">
-                <i className="fab fa-facebook-f"></i>
+                <FaFacebook size={30} color="#fFF" />
               </a>
             </li>
             <li>
               <a href="#">
-                <i className="fab fa-twitter"></i>
+                <FaTwitter size={30} color="#fFF" />
               </a>
             </li>
             <li>
               <a href="#">
-                <i className="fab fa-instagram"></i>
+                <FaInstagram size={30} color="#fFF" />
               </a>
             </li>
           </ul>
